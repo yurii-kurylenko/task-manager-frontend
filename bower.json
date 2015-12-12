@@ -1,0 +1,16 @@
+{
+  "name": "task-manager-frontend",
+  "version": "0.0.1",
+  "dependencies": {
+    "lodash": "3.10.0",
+    "angular": "1.4.8",
+    "angular-ui-router": "0.2.15",
+    "angularjs-rails-resource": "~2.0.0",
+    "bootstrap-sass": "~3.3.6",
+    "angular-bootstrap": "latest",
+    "ng-token-auth": "latest"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
+  }
+}

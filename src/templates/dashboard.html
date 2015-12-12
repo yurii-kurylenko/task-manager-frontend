@@ -1,0 +1,24 @@
+<div class="row">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          Simple Project Management
+        </a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <div class="navbar-form navbar-left" role="search">
+          <a ui-sref="dashboard.add_project" class="btn btn-success">Add project</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a ng-click="signout()">Sign out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="row">
+  <div ui-view=""></div>
+</div>

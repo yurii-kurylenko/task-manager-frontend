@@ -1,0 +1,39 @@
+<div ng-repeat="project in projects" class="panel panel-primary project">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    {{project.title}}
+    <a  class="btn btn-success btn-xs pull-right"  ui-sref="dashboard.add_task({projectId: project.id})">Add task</a>
+    <button  class="btn btn-danger btn-xs pull-right"  ng-click="deleteProject(project)">Delete</button>
+    <a  class="btn btn-warning btn-xs pull-right" ui-sref="dashboard.update_project({id: project.id})" >Update</a>
+  </div>
+  <div class="panel-body">
+    <p>{{project.description}}</p>
+  </div>
+
+  <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Priority</th>
+            <th>Deadline</th>
+            <th>Status</th>
+            <th>Management</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="task" ng-class="{'done': task.status == 'done'}" ng-repeat="task in project.tasks">
+            <th scope="row">{{$index + 1}}</th>
+            <td>{{task.title}}</td>
+            <td>{{task.priority}}</td>
+            <td>{{task.deadline}}</td>
+            <td>{{task.status}}</td>
+            <td>
+              <button class="btn btn-warning btn-xs" ui-sref="dashboard.update_task({projectId: project.id, id: task.id})">Update</button>
+              <button class="btn btn-danger btn-xs"  ng-click="deleteTask(project, task)">Delete</button>
+              <button class="btn btn-success btn-xs" ng-if="task.status != 'done'" ng-click="doneTask(task)">Done</button>
+            </td>
+          </tr>
+        </tbody>
+  </table>
+</div>
